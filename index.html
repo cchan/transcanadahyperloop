@@ -1,0 +1,54 @@
+<html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Alegreya+Sans+SC' rel='stylesheet' type='text/css'>
+<style>
+video#bgvid { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover; 
+}
+</style>
+<script>
+//https://stackoverflow.com/questions/19700020/change-progress-bar-value-based-on-scrolling
+$(window).scroll(function () {
+  var s = $(window).scrollTop(),
+        d = $(document).height(),
+        c = $(window).height();
+        scrollPercent = (s / (d-c)) * 100;
+        var position = scrollPercent;
+
+   $("#progressbar").attr('margin-left', position);
+
+});
+</script>
+</head>
+<body>
+<video autoplay loop id="bgvid">
+    <source src="polina.webm" type="video/webm">
+    <source src="polina.mp4" type="video/mp4">
+</video>
+<section style="text-align:center;padding-top:10%;">
+	<!--
+	https://www.youtube.com/watch?v=oBD_Yxx33ms
+	https://www.youtube.com/watch?v=m8n2o3Qx504
+	https://www.youtube.com/watch?v=kfmhd_kfaD4
+	https://www.youtube.com/watch?v=ZpHRp-WgQ0w
+	-->
+
+	<!--
+	https://s-media-cache-ak0.pinimg.com/originals/0e/79/c5/0e79c590cd66b6140e9505201045b7de.png
+	https://i.imgur.com/XVLga.jpg
+	-->
+	<h1><img src="onestep.png" alt="OneStep" style="height:30%;"></h1>
+	<h2 style="font-size:2em;font-family:'Alegreya Sans SC', cursive;">wait no more.</h2>
+</section>
+</body>
+</html>
