@@ -1,11 +1,29 @@
 <html>
 <head>
-<link href='https://fonts.googleapis.com/css?family=Alegreya+Sans+SC' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Montserrat' rel='stylesheet' type='text/css'>
 <style>
+.left, .right{
+	width: 50%;
+	font-family:Montserrat;
+	margin-left:auto;
+	margin-right:auto;
+	font-weight: normal;
+	line-height: 2em;
+	margin-top: 3em;
+	margin-bottom: 10em;
+}
+section{min-height: 80%;}
+div.right ol li{text-indent: none !important;}
+.left{
+	margin-left:10%;
+}
+.right{
+	width: 50%;
+	margin-right:10%;
+}
 #home{
 	text-align:center;
 	height: 100%;
-	background-color:black;
 	margin:0;
 	padding:0;
 }
@@ -13,56 +31,58 @@
 	margin-top: 10%;
 }
 video#bgvid { 
-    position: fixed;
-    top: 50%;
-    left: 50%;
+position:absolute;
     min-width: 100%;
-    min-height: 100%;
     width: auto;
-    height: auto;
+    height: 80%;
     z-index: -100;
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
 	background-color: black;
-    background-size: cover; 
+    background-size: cover;
 }
 body{
 	color: white;
 	padding:0;
 	margin:0;
+	background-color: black;
 }
-#progbar1, #progbar2{
+.progbar1, .progbar2{
 	overflow:hidden;
 	width:30%;
 	display:inline-block;
 }
-#progbar1 img, #progbar2 img{
+.progbar1 img, .progbar2 img{
 	height: 3em;
 }
-#progbar1{
+.progbar1{
 	position:absolute;left:0;
 	border-right: solid 3px #ff6a00;
 }
-#progbar2{
+.progbar2{
 	position:absolute;right:0;
 	border-left: solid 3px #00adef;
 }
-#downarrow{
+.downarrow{
 	display:inline-block;
+	border: solid 1px #ff6a00;
+	border-radius: 100px;
+	transition: border-color 0.5s;
+	margin-top:20px;
 }
-#downarrow a{
+.downarrow a{
+	position:relative;top:-3px;
 	text-decoration: none;
 	font-size: 3em;color:#ff6a00;
-	font-weight:bold;
 	transition: color 0.5s;
 	font-family:Arial;
 }
-#downarrow:hover a{
+.downarrow:hover{
+	border: solid 1px #00adef;}
+.downarrow:hover a{
 	color:#00adef;
 	cursor:pointer;
 }
 h2{font-family:'Alegreya Sans SC', cursive;transition: color 0.5s;color:#ff6a00;}
-#about{
+section{
 	padding-top:5em;
 }
 .sectionheader{margin:0px;text-align:center;font-size:4em;line-height:0.5em;}
@@ -73,12 +93,14 @@ $(function(){
 	//https://stackoverflow.com/questions/19700020/change-progress-bar-value-based-on-scrolling
 	$(window).scroll(function () {
 		var s = $(window).scrollTop();
-	   $("#progbar1 img").css('margin-left', s);
-	   $("#progbar2 img").css('margin-left', s-$(window).width()/3.33);
-	   if(s > 365)
-			$(".sectionheader").css("color","#00adef");
-		else
-			$(".sectionheader").css("color","#ff6a00");
+	   $("#about .progbar1 img").css('margin-left', s);
+	   $("#about .progbar2 img").css('margin-left', s-$(window).width()/3.33);
+	   $("#howto .progbar1 img").css('margin-left', s-700);
+	   $("#howto .progbar2 img").css('margin-left', s-$(window).width()/3.33-700);
+	   if(s > 365)$("#about .sectionheader").css("color","#00adef");
+		else $("#about .sectionheader").css("color","#ff6a00");
+	   if(s > 1065)$("#howto .sectionheader").css("color","#00adef");
+		else $("#howto .sectionheader").css("color","#ff6a00");
 	   console.log(s);
 	});
 
@@ -102,9 +124,8 @@ $(function(){
 </script>
 </head>
 <body>
-<video autoplay loop id="bgvid">
-    <!source src="polina.webm" type="video/webm">
-    <!source src="polina.mp4" type="video/mp4">
+<video autoplay loop id="bgvid" muted style="height:100%;">
+    <source src="full.mp4" type="video/mp4">
 </video>
 <section id="home">
 	<!--
@@ -120,71 +141,37 @@ $(function(){
 	-->
 	<h1><a href="#home"><img id="logo" src="onestep.png" alt="OneStep" style="height:30%;"></a></h1>
 	<h2 style="font-size:2em;"><span style="color:#ff6a00">wait</span> <span style="color:#00adef">no more.</span></h2>
-	<div id="downarrow"><a href="#about">&nbsp;v&nbsp;</a></div>
+	<div class="downarrow"><a href="#about">&nbsp;v&nbsp;</a></div>
 </section>
-<div id="about">
-	<div id="progbar1"><img src="orangeperson.png"></div>
-	<div id="progbar2"><img src="blueperson.png"></div>
-	<h2 class="sectionheader">About</h2>
-	<br>
-</div>
-<section>
-	hello
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
+<section id="about">
+	<div>
+		<div class="progbar1"><img src="orangeperson.png"></div>
+		<div class="progbar2"><img src="blueperson.png"></div>
+		<h2 class="sectionheader">About</h2>
+		<br>
+	</div>
+	<p class="left" style="text-indent:3em;">Everyone has been there. Dragging themselves out of bed, rushing to get ready and quickly scarfing down a paltry breakfast, just to wait too long for the bus, or get stuck in traffic. Precious minutes of sleep lost, just to get to school or work on time. Now, this daily struggle can be avoided with the all-new OneStep portal. Enjoy a relaxed morning, and when it's time to be at work, just one step through our OneStep portal, and you'll immediately be anywhere you need to be, sans long commute on bus or car.</p>
+	<div style="text-align:center;"><div class="downarrow" style="position:relative;top:-150px;"><a href="#howto">&nbsp;v&nbsp;</a></div></div>
 </section>
+<section id="howto">
+	<div>
+		<div class="progbar1"><img src="orangeperson.png"></div>
+		<div class="progbar2"><img src="blueperson.png"></div>
+		<h2 class="sectionheader">How to Use</h2>
+		<br>
+	</div>
+	<div class="right">
+		Just follow these simple steps, and get ready for a nice long morning! 
+		<ol style="text-indent:none;">
+			<li style="text-indent:none;">Order the OneStep portal, now only $99.99 at our website, <a href="onestep.com" style="color:gray">onestep.com</a></li>
+			<li style="text-indent:none;">There are two major parts to our portal. The first, a large magnetized steel warp loop is to be set up at home, in your garage, your kitchen, your living room, where ever you want. Directions are included, as well as found on our website.</li>
+			<li style="text-indent:none;">The second part of our portal, is a set of two chips about the size of your fingertip. Each is to be placed at your destination: your office, school, or anywhere! You can teleport straight to any chip of your choice from home, or recall directly back home from any chip, as easy as that. WARNING: the usage of the portal without this piece properly installed in an open space could lead to loss of body parts, internal and external injuries, loss of consciousness, and/or death.</li>
+			<li style="text-indent:none;">Enjoy your stress free mornings!</li>
+		</ol>
+	</div>
+</section>
+<footer style="color:#444;font-family:Montserrat;text-align:center;margin:3em;">
+	Copyright &copy;2015 <a style="color:#444;" href="http://clive.io">Clive Chan</a> & Thesi Mandl
+</footer>
 </body>
 </html>
