@@ -2,6 +2,16 @@
 <head>
 <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans+SC' rel='stylesheet' type='text/css'>
 <style>
+#home{
+	text-align:center;
+	height: 100%;
+	background-color:black;
+	margin:0;
+	padding:0;
+}
+#logo{
+	margin-top: 10%;
+}
 video#bgvid { 
     position: fixed;
     top: 50%;
@@ -13,29 +23,90 @@ video#bgvid {
     z-index: -100;
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
+	background-color: black;
     background-size: cover; 
 }
+body{
+	color: white;
+	padding:0;
+	margin:0;
+}
+#progbar1, #progbar2{
+	overflow:hidden;
+	width:30%;
+	display:inline-block;
+}
+#progbar1 img, #progbar2 img{
+	height: 3em;
+}
+#progbar1{
+	position:absolute;left:0;
+	border-right: solid 3px #ff6a00;
+}
+#progbar2{
+	position:absolute;right:0;
+	border-left: solid 3px #00adef;
+}
+#downarrow{
+	display:inline-block;
+}
+#downarrow a{
+	text-decoration: none;
+	font-size: 3em;color:#ff6a00;
+	font-weight:bold;
+	transition: color 0.5s;
+	font-family:Arial;
+}
+#downarrow:hover a{
+	color:#00adef;
+	cursor:pointer;
+}
+h2{font-family:'Alegreya Sans SC', cursive;transition: color 0.5s;color:#ff6a00;}
+#about{
+	padding-top:5em;
+}
+.sectionheader{margin:0px;text-align:center;font-size:4em;line-height:0.5em;}
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>
-//https://stackoverflow.com/questions/19700020/change-progress-bar-value-based-on-scrolling
-$(window).scroll(function () {
-  var s = $(window).scrollTop(),
-        d = $(document).height(),
-        c = $(window).height();
-        scrollPercent = (s / (d-c)) * 100;
-        var position = scrollPercent;
+$(function(){
+	//https://stackoverflow.com/questions/19700020/change-progress-bar-value-based-on-scrolling
+	$(window).scroll(function () {
+		var s = $(window).scrollTop();
+	   $("#progbar1 img").css('margin-left', s);
+	   $("#progbar2 img").css('margin-left', s-$(window).width()/3.33);
+	   if(s > 365)
+			$(".sectionheader").css("color","#00adef");
+		else
+			$(".sectionheader").css("color","#ff6a00");
+	   console.log(s);
+	});
 
-   $("#progressbar").attr('margin-left', position);
+	//Smooth scrolling.
+	//Adapted from //http://www.paulund.co.uk/smooth-scroll-to-internal-links-with-jquery
+	$(document).ready(function(){
+		$('a[href^="#"]').on('click',function (e) {
+			e.preventDefault();
 
+			var target = this.hash;
+			var $target = $(target);
+
+			$('html, body').stop().animate({
+				'scrollTop': $target.offset().top
+			}, 900, 'swing', function () {
+				window.location.hash = target;
+			});
+		});
+	});
 });
 </script>
 </head>
 <body>
 <video autoplay loop id="bgvid">
-    <source src="polina.webm" type="video/webm">
-    <source src="polina.mp4" type="video/mp4">
+    <!source src="polina.webm" type="video/webm">
+    <!source src="polina.mp4" type="video/mp4">
 </video>
-<section style="text-align:center;padding-top:10%;">
+<section id="home">
 	<!--
 	https://www.youtube.com/watch?v=oBD_Yxx33ms
 	https://www.youtube.com/watch?v=m8n2o3Qx504
@@ -47,8 +118,73 @@ $(window).scroll(function () {
 	https://s-media-cache-ak0.pinimg.com/originals/0e/79/c5/0e79c590cd66b6140e9505201045b7de.png
 	https://i.imgur.com/XVLga.jpg
 	-->
-	<h1><img src="onestep.png" alt="OneStep" style="height:30%;"></h1>
-	<h2 style="font-size:2em;font-family:'Alegreya Sans SC', cursive;">wait no more.</h2>
+	<h1><a href="#home"><img id="logo" src="onestep.png" alt="OneStep" style="height:30%;"></a></h1>
+	<h2 style="font-size:2em;"><span style="color:#ff6a00">wait</span> <span style="color:#00adef">no more.</span></h2>
+	<div id="downarrow"><a href="#about">&nbsp;v&nbsp;</a></div>
+</section>
+<div id="about">
+	<div id="progbar1"><img src="orangeperson.png"></div>
+	<div id="progbar2"><img src="blueperson.png"></div>
+	<h2 class="sectionheader">About</h2>
+	<br>
+</div>
+<section>
+	hello
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 </section>
 </body>
 </html>
