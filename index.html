@@ -15,11 +15,10 @@
 section{min-height: 80%;}
 div.right ol li{text-indent: none !important;}
 .left{
-	margin-left:10%;
+	margin-left:auto;
 }
 .right{
-	width: 50%;
-	margin-right:10%;
+	margin-right:auto;
 }
 #home{
 	text-align:center;
@@ -31,12 +30,9 @@ div.right ol li{text-indent: none !important;}
 	margin-top: 10%;
 }
 video#bgvid { 
-opacity:0.8;
-
-position:absolute;
-    min-width: 100%;
-    width: auto;
-    height: 80%;
+	opacity:0.8;
+	position:absolute;
+    height: 100%;
     z-index: -100;
 	background-color: black;
     background-size: cover;
@@ -46,6 +42,7 @@ body{
 	padding:0;
 	margin:0;
 	background-color: black;
+	overflow-x: hidden;
 }
 .progbar1, .progbar2{
 	overflow:hidden;
@@ -100,15 +97,23 @@ $(function(){
 	//https://stackoverflow.com/questions/19700020/change-progress-bar-value-based-on-scrolling
 	$(window).scroll(function () {
 		var s = $(window).scrollTop() - 150;
+		//s += s*s*s/6000;
 		var s2 = $(window).scrollTop() - 800;
+		//s2 += s2*s2*s2/6000;
+		var s3 = $(window).scrollTop() - 1700;
+		//s3 += s3*s3*s3/6000;
 	   $("#about .progbar1 img").css('margin-left', s);
 	   $("#about .progbar2 img").css('margin-left', s-$(window).width()/3.33);
 	   $("#howto .progbar1 img").css('margin-left', s2);
 	   $("#howto .progbar2 img").css('margin-left', s2-$(window).width()/3.33);
+	   $("#form .progbar1 img").css('margin-left', s3);
+	   $("#form .progbar2 img").css('margin-left', s3-$(window).width()/3.33);
 	   if(s > 365)$("#about .sectionheader").css("color","#00adef");
 		else $("#about .sectionheader").css("color","#ff6a00");
 	   if(s2 > 365)$("#howto .sectionheader").css("color","#00adef");
 		else $("#howto .sectionheader").css("color","#ff6a00");
+	   if(s3 > 365)$("#form .sectionheader").css("color","#00adef");
+		else $("#form .sectionheader").css("color","#ff6a00");
 	   console.log(s);
 	});
 
@@ -171,14 +176,130 @@ $(function(){
 	<div class="right">
 		Just follow these simple steps, and get ready for a nice long morning! 
 		<ol style="text-indent:none;">
-			<li style="text-indent:none;">Order the OneStep portal, now only $99.99 at our website, <a href="onestep.com" style="color:gray">onestep.com</a></li>
+			<li style="text-indent:none;">Order the OneStep portal, <a style="color:gray;" href="#form">right here</a> on our website.</li>
 			<li style="text-indent:none;">There are two major parts to our portal. The first, a large magnetized steel warp loop is to be set up at home, in your garage, your kitchen, your living room, where ever you want. Directions are included, as well as found on our website.</li>
 			<li style="text-indent:none;">The second part of our portal, is a set of two chips about the size of your fingertip. Each is to be placed at your destination: your office, school, or anywhere! You can teleport straight to any chip of your choice from home, or recall directly back home from any chip, as easy as that. WARNING: the usage of the portal without this piece properly installed in an open space could lead to loss of body parts, internal and external injuries, loss of consciousness, and/or death.</li>
 			<li style="text-indent:none;">Enjoy your stress free mornings!</li>
 		</ol>
 	</div>
+	<div style="text-align:center; position:relative; top:-150px;"><a class="downarrow" href="#form"><span>&nbsp;v&nbsp;</span></a></div>
 </section>
-<footer style="color:#444;font-family:Montserrat;text-align:center;margin:5em;">
+
+
+
+<!--use a google form-->
+
+<style>
+form{
+	display:block;
+	margin-left: auto; margin-right: auto;
+	width:50%;
+	text-align:center;
+	background-color:black;
+	color:white;
+	font-family:Montserrat;
+}
+form h1{
+	font-size: 2.5em;
+	margin: 0.1em;
+}
+form h2{
+	font-size: 1.5em;
+	margin: 0.1em;
+}
+form input, form label, form button{
+	font-size: 1em;
+	padding:0.2em;
+	margin: 0.2em;
+}
+form label:hover{
+	cursor: pointer;
+}
+form input[type=text]{
+	width:20em;
+}
+form input[type=email]{
+	width:25em;
+}
+form input[type=radio]{
+	height: 15px;
+	width: 15px;
+}
+form input[type=radio]:hover{
+	cursor: pointer;
+}
+form button{
+	border: solid 5px white;
+	background-color: black;
+	color:white;
+	transition: background-color 0.5s, width 0.5s, height 0.5s;
+	border-radius: 5px;
+}
+form button:hover{
+	cursor:pointer;
+}
+label{display:block;}
+</style>
+
+<section id="form">
+	<div>
+		<div class="progbar1"><img src="orangeperson.png"></div>
+		<div class="progbar2"><img src="blueperson.png"></div>
+		<h2 class="sectionheader"><a href="#form">Interest Form</a></h2>
+		<br>
+	</div>
+	<form target="hiddenFrame" action="https://docs.google.com/forms/d/14khs8tql8jYJpdWfeLsHECKSxfIf_wqdM7oNHtAfvZw/formResponse" method="POST" id="ss-form" target="_self" onsubmit="" autocomplete="off">
+		<label>
+			<input type="text" name="entry.660440213" value="" placeholder="Name" required aria-required="true">
+		</label>
+		<label>
+			<input type="email" name="entry.846943958" value="" placeholder="email@email.com" title="Must be a valid email address" required aria-required="true">
+		</label>
+		<label>
+			<textarea placeholder="Comment" value="" style="width: 500px; height: 200px;" name="entry.1327479222"></textarea>
+		</label>
+		<div>
+			<button id="submitbtn" name="submit"><span style="display:inline-block;">Submit</span></button>
+		</div>
+	</form>
+
+	<!--http://stackoverflow.com/a/30666118/1181387-->
+	<iframe id="hiddenFrame" name="hiddenFrame" style="display: none;"></iframe>
+</section>
+
+<script>
+	var lockColor = false;
+	var hovering = false;
+	function rewidth(){$("#submitbtn").width($("#submitbtn span").width());}
+	$("#submitbtn").mouseenter(function(){hovering = true;if(!lockColor)$(this).css({"background-color":"white","color":"black"});});
+	$("#submitbtn").mouseleave(function(){hovering = false;if(!lockColor)$(this).css({"background-color":"black","color":"white"});});
+	$("#ss-form").on("submit", function () {
+		$("#submitbtn span").text("Sending response...");
+		$("#submitbtn").css({"background-color":"red","color":"white"});
+		rewidth();
+		lockColor=true;
+		$("#hiddenFrame").load(function(){
+			//$("#ss-form").trigger("reset");
+			$("#submitbtn span").html("Sent! Thanks for your interest; we'll be getting back to you soon.");
+			$("#submitbtn").css("background-color","green");
+			rewidth();
+			setTimeout(function(){
+				$("#submitbtn span").text("Submit");
+				$("#submitbtn").css("background-color","black");
+				rewidth();
+				lockColor=false;
+				if(hovering)
+					$("#submitbtn").mouseenter();
+			},5000);
+		});
+    });
+</script>
+
+
+
+
+
+<footer style="color:#444;font-family:Montserrat;text-align:center;margin:1em 5em 5em 5em;">
 	Copyright &copy;2015 <a style="color:#444;" href="http://clive.io">Clive Chan</a> & Thesi Mandl
 	<br>
 	Made with &lt;3 for Public Speaking 1 @ LHS
