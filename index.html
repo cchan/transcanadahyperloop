@@ -31,6 +31,8 @@ div.right ol li{text-indent: none !important;}
 	margin-top: 10%;
 }
 video#bgvid { 
+opacity:0.8;
+
 position:absolute;
     min-width: 100%;
     width: auto;
@@ -67,24 +69,29 @@ body{
 	border-radius: 100px;
 	transition: border-color 0.5s;
 	margin-top:20px;
-}
-.downarrow a{
-	position:relative;top:-3px;
+	text-align:center;
+	width:55px;
+	height:55px;
 	text-decoration: none;
-	font-size: 3em;color:#ff6a00;
+}
+.downarrow span{
+	position:relative;top:12px;
+	text-decoration: none;
+	font-size: 1.5em;color:#ff6a00;
 	transition: color 0.5s;
 	font-family:Arial;
 }
 .downarrow:hover{
-	border: solid 1px #00adef;}
-.downarrow:hover a{
+	border: solid 1px #00adef;
+	cursor:pointer;}
+.downarrow:hover span{
 	color:#00adef;
-	cursor:pointer;
 }
 h2{font-family:'Alegreya Sans SC', cursive;transition: color 0.5s;color:#ff6a00;}
 section{
 	padding-top:5em;
 }
+h2 a{color:inherit;text-decoration:none;}
 .sectionheader{margin:0px;text-align:center;font-size:4em;line-height:0.5em;}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -92,14 +99,15 @@ section{
 $(function(){
 	//https://stackoverflow.com/questions/19700020/change-progress-bar-value-based-on-scrolling
 	$(window).scroll(function () {
-		var s = $(window).scrollTop();
+		var s = $(window).scrollTop() - 150;
+		var s2 = $(window).scrollTop() - 800;
 	   $("#about .progbar1 img").css('margin-left', s);
 	   $("#about .progbar2 img").css('margin-left', s-$(window).width()/3.33);
-	   $("#howto .progbar1 img").css('margin-left', s-700);
-	   $("#howto .progbar2 img").css('margin-left', s-$(window).width()/3.33-700);
+	   $("#howto .progbar1 img").css('margin-left', s2);
+	   $("#howto .progbar2 img").css('margin-left', s2-$(window).width()/3.33);
 	   if(s > 365)$("#about .sectionheader").css("color","#00adef");
 		else $("#about .sectionheader").css("color","#ff6a00");
-	   if(s > 1065)$("#howto .sectionheader").css("color","#00adef");
+	   if(s2 > 365)$("#howto .sectionheader").css("color","#00adef");
 		else $("#howto .sectionheader").css("color","#ff6a00");
 	   console.log(s);
 	});
@@ -141,23 +149,23 @@ $(function(){
 	-->
 	<h1><a href="#home"><img id="logo" src="onestep.png" alt="OneStep" style="height:30%;"></a></h1>
 	<h2 style="font-size:2em;"><span style="color:#ff6a00">wait</span> <span style="color:#00adef">no more.</span></h2>
-	<div class="downarrow"><a href="#about">&nbsp;v&nbsp;</a></div>
+	<a class="downarrow" href="#about"><span>&nbsp;v&nbsp;</span></a>
 </section>
 <section id="about">
 	<div>
 		<div class="progbar1"><img src="orangeperson.png"></div>
 		<div class="progbar2"><img src="blueperson.png"></div>
-		<h2 class="sectionheader">About</h2>
+		<h2 class="sectionheader"><a href="#about">About</a></h2>
 		<br>
 	</div>
 	<p class="left" style="text-indent:3em;">Everyone has been there. Dragging themselves out of bed, rushing to get ready and quickly scarfing down a paltry breakfast, just to wait too long for the bus, or get stuck in traffic. Precious minutes of sleep lost, just to get to school or work on time. Now, this daily struggle can be avoided with the all-new OneStep portal. Enjoy a relaxed morning, and when it's time to be at work, just one step through our OneStep portal, and you'll immediately be anywhere you need to be, sans long commute on bus or car.</p>
-	<div style="text-align:center;"><div class="downarrow" style="position:relative;top:-150px;"><a href="#howto">&nbsp;v&nbsp;</a></div></div>
+	<div style="text-align:center; position:relative; top:-150px;"><a class="downarrow" href="#howto"><span>&nbsp;v&nbsp;</span></a></div>
 </section>
 <section id="howto">
 	<div>
 		<div class="progbar1"><img src="orangeperson.png"></div>
 		<div class="progbar2"><img src="blueperson.png"></div>
-		<h2 class="sectionheader">How to Use</h2>
+		<h2 class="sectionheader"><a href="#howto">How to Use</a></h2>
 		<br>
 	</div>
 	<div class="right">
@@ -170,8 +178,10 @@ $(function(){
 		</ol>
 	</div>
 </section>
-<footer style="color:#444;font-family:Montserrat;text-align:center;margin:3em;">
+<footer style="color:#444;font-family:Montserrat;text-align:center;margin:5em;">
 	Copyright &copy;2015 <a style="color:#444;" href="http://clive.io">Clive Chan</a> & Thesi Mandl
+	<br>
+	Made with &lt;3 for Public Speaking 1 @ LHS
 </footer>
 </body>
 </html>
