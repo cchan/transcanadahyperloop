@@ -19,6 +19,8 @@ nav a{
 	top:0;
 	right:0;
 	transition: color 0.5s;
+	padding:2em;
+	margin:-2em;
 }
 nav:hover a.active{
 	/*color: #ff6a00;*/
