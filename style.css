@@ -1,0 +1,187 @@
+nav{
+	position: fixed;
+	right: 0;
+	margin-right: 5%;
+	top: 10%;
+	height:50%;
+	font-family: Montserrat;
+	width: 10em;
+}
+nav a{
+	display:block;
+	text-align:right;
+	color:white;
+	text-decoration:none;
+	position:absolute;
+	top:0;
+	right:0;
+}
+nav #nav-slider{
+	height:0;
+	width:2px;
+	background-color: white;
+	position: absolute;
+	right:2.5px;top:12.5px;/*conveniently, the 2px width and two 1px borders cancels out*/
+	z-index:-50;
+}
+nav a span{
+	content:"";
+	display:inline-block;
+	height:5px;width:5px;
+	border-radius:5px;
+	border:solid 1px #fff;
+	background-color:black;
+	transition:background-color 0.5s;
+	margin-left: 5px;
+}
+nav a.active span{
+	background-color:white;
+}
+.left, .right{
+	width: 50%;
+	font-family:Montserrat;
+	margin-left:auto;
+	margin-right:auto;
+	font-weight: normal;
+	line-height: 2em;
+	margin-top: 3em;
+	margin-bottom: 10em;
+}
+section{min-height: 80%;}
+div.right ol li{text-indent: none !important;}
+.left{
+	margin-left:auto;
+}
+.right{
+	margin-right:auto;
+}
+#home{
+	text-align:center;
+	height: 100%;
+	margin:0;
+	padding-bottom:10%;
+}
+#logo{
+	margin-top: 0.5em;
+	width: 20em;
+}
+video#bgvid { 
+	opacity:0.8;
+	position:absolute;
+	min-width:100%;
+    min-height: 100%;
+    z-index: -100;
+	background-color: black;
+    background-size: cover;
+}
+body{
+	color: white;
+	padding:0;
+	margin:0;
+	background-color: black;
+	overflow-x: hidden;
+}
+.progbar1, .progbar2{
+	overflow:hidden;
+	width:30%;
+	display:inline-block;
+}
+.progbar1 img, .progbar2 img{
+	height: 3em;
+}
+.progbar1{
+	position:absolute;left:0;
+	border-right: solid 3px #ff6a00;
+}
+.progbar2{
+	position:absolute;right:0;
+	border-left: solid 3px #00adef;
+}
+.downarrow{
+	display:inline-block;
+	border: solid 1px #ff6a00;
+	border-radius: 100px;
+	transition: border-color 0.5s;
+	margin-top:20px;
+	text-align:center;
+	width:55px;
+	height:55px;
+	text-decoration: none;
+}
+.downarrow span{
+	position:relative;top:12px;
+	text-decoration: none;
+	font-size: 1.5em;
+	transition: border-color 0.5s;
+	font-family:Arial;
+	display: inline-block;
+	border-right: solid 2px #ff6a00;
+	border-bottom: solid 2px#ff6a00;
+	width:20px;height:20px;
+	transform: rotate(45deg);
+}
+.downarrow:hover{
+	border: solid 1px #00adef;
+	cursor:pointer;}
+.downarrow:hover span{
+	border-color:#00adef;
+}
+h2{font-family:'Alegreya Sans SC', cursive;transition: color 0.5s;color:#ff6a00;}
+section{
+	padding-top:5em;
+}
+h2 a{color:inherit;text-decoration:none;}
+.sectionheader{margin:0px;text-align:center;font-size:4em;line-height:0.5em;}
+footer{color:#444;font-family:Montserrat;text-align:center;margin:5em 5em 5em 5em;}
+
+/*Clubfair-style form*/
+#ss-form{margin-top:3em;
+	display:block;
+	margin-left: auto; margin-right: auto;
+	width:50%;
+	text-align:center;
+	background-color:black;
+	color:white;
+	font-family:Montserrat;
+}
+#ss-form h1{
+	font-size: 2.5em;
+	margin: 0.1em;
+}
+#ss-form h2{
+	font-size: 1.5em;
+	margin: 0.1em;
+}
+#ss-form input, form label, form button{
+	font-size: 1em;
+	padding:0.2em;
+	margin: 0.2em;
+}
+#ss-form label:hover{
+	cursor: pointer;
+}
+#ss-form input[type=text]{
+	width:20em;
+}
+#ss-form input[type=email]{
+	width:25em;
+}
+#ss-form input[type=radio]{
+	height: 15px;
+	width: 15px;
+}
+#ss-form input[type=radio]:hover{
+	cursor: pointer;
+}
+#ss-form button{
+	border: solid 5px white;
+	background-color: black;
+	color:white;
+	transition: background-color 0.5s, width 0.5s, height 0.5s;
+	border-radius: 5px;
+}
+#ss-form button:hover{
+	cursor:pointer;
+}
+#ss-form input,#ss-form textarea,#ss-form button{display:block;margin-left:auto;margin-right:auto;}
+#ss-form input,#ss-form textarea{color:black;}

@@ -1,313 +1,90 @@
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<link href='https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Montserrat' rel='stylesheet' type='text/css'>
-<style>
-.left, .right{
-	width: 50%;
-	font-family:Montserrat;
-	margin-left:auto;
-	margin-right:auto;
-	font-weight: normal;
-	line-height: 2em;
-	margin-top: 3em;
-	margin-bottom: 10em;
-}
-section{min-height: 80%;}
-div.right ol li{text-indent: none !important;}
-.left{
-	margin-left:auto;
-}
-.right{
-	margin-right:auto;
-}
-#home{
-	text-align:center;
-	height: 100%;
-	margin:0;
-	padding:0;
-}
-#logo{
-	margin-top: 10%;
-}
-video#bgvid { 
-	opacity:0.8;
-	position:absolute;
-    height: 100%;
-    z-index: -100;
-	background-color: black;
-    background-size: cover;
-}
-body{
-	color: white;
-	padding:0;
-	margin:0;
-	background-color: black;
-	overflow-x: hidden;
-}
-.progbar1, .progbar2{
-	overflow:hidden;
-	width:30%;
-	display:inline-block;
-}
-.progbar1 img, .progbar2 img{
-	height: 3em;
-}
-.progbar1{
-	position:absolute;left:0;
-	border-right: solid 3px #ff6a00;
-}
-.progbar2{
-	position:absolute;right:0;
-	border-left: solid 3px #00adef;
-}
-.downarrow{
-	display:inline-block;
-	border: solid 1px #ff6a00;
-	border-radius: 100px;
-	transition: border-color 0.5s;
-	margin-top:20px;
-	text-align:center;
-	width:55px;
-	height:55px;
-	text-decoration: none;
-}
-.downarrow span{
-	position:relative;top:12px;
-	text-decoration: none;
-	font-size: 1.5em;
-	transition: border-color 0.5s;
-	font-family:Arial;
-	display: inline-block;
-	border-right: solid 2px #ff6a00;
-	border-bottom: solid 2px#ff6a00;
-	width:20px;height:20px;
-	transform: rotate(45deg);
-}
-.downarrow:hover{
-	border: solid 1px #00adef;
-	cursor:pointer;}
-.downarrow:hover span{
-	border-color:#00adef;
-}
-h2{font-family:'Alegreya Sans SC', cursive;transition: color 0.5s;color:#ff6a00;}
-section{
-	padding-top:5em;
-}
-h2 a{color:inherit;text-decoration:none;}
-.sectionheader{margin:0px;text-align:center;font-size:4em;line-height:0.5em;}
-</style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script>
-$(function(){
-	//https://stackoverflow.com/questions/19700020/change-progress-bar-value-based-on-scrolling
-	$(window).scroll(function () {
-		var s = $(window).scrollTop() - $("#about").offset().top + $("#about").width()*0.3 - $("#about .progbar1 img").width()/2 + 1;
-		//s += s*s*s/6000;
-		var s2 = $(window).scrollTop() - $("#howto").offset().top + $("#howto").width()*0.3 - $("#howto .progbar1 img").width()/2 + 1;
-		//s2 += s2*s2*s2/6000;
-		var s3 = $(window).scrollTop() - $("#form").offset().top + $("#form").width()*0.3 - $("#form .progbar1 img").width()/2 + 1;
-		//s3 += s3*s3*s3/6000;
-	   $("#about .progbar1 img").css('margin-left', s);
-	   $("#about .progbar2 img").css('margin-left', s-$(window).width()/3.33);
-	   $("#howto .progbar1 img").css('margin-left', s2);
-	   $("#howto .progbar2 img").css('margin-left', s2-$(window).width()/3.33);
-	   $("#form .progbar1 img").css('margin-left', s3);
-	   $("#form .progbar2 img").css('margin-left', s3-$(window).width()/3.33);
-	   if(s > 365)$("#about .sectionheader").css("color","#00adef");
-		else $("#about .sectionheader").css("color","#ff6a00");
-	   if(s2 > 365)$("#howto .sectionheader").css("color","#00adef");
-		else $("#howto .sectionheader").css("color","#ff6a00");
-	   if(s3 > 365)$("#form .sectionheader").css("color","#00adef");
-		else $("#form .sectionheader").css("color","#ff6a00");
-	   console.log(s);
-	});
-
-	//Smooth scrolling.
-	//Adapted from //http://www.paulund.co.uk/smooth-scroll-to-internal-links-with-jquery
-	$(document).ready(function(){
-		$('a[href^="#"]').on('click',function (e) {
-			e.preventDefault();
-
-			var target = this.hash;
-			var $target = $(target);
-
-			$('html, body').stop().animate({
-				'scrollTop': $target.offset().top
-			}, 900, 'swing', function () {
-				window.location.hash = target;
-			});
-		});
-	});
-});
-</script>
+	<meta charset="utf-8">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+	
+	<title>OneStep</title>
+	
+	<link href="normalize.css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Montserrat' rel='stylesheet' type='text/css'>
+	<link href='style.css' rel='stylesheet'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="script.js"></script>
 </head>
 <body>
-<video autoplay loop id="bgvid" muted style="height:100%;">
-    <source src="full.mp4" type="video/mp4">
-</video>
-<section id="home">
-	<!--
-	https://www.youtube.com/watch?v=oBD_Yxx33ms
-	https://www.youtube.com/watch?v=m8n2o3Qx504
-	https://www.youtube.com/watch?v=kfmhd_kfaD4
-	https://www.youtube.com/watch?v=ZpHRp-WgQ0w
-	-->
-
-	<!--
-	https://s-media-cache-ak0.pinimg.com/originals/0e/79/c5/0e79c590cd66b6140e9505201045b7de.png
-	https://i.imgur.com/XVLga.jpg
-	-->
-	<h1><a href="#home"><img id="logo" src="onestep.png" alt="OneStep" style="height:30%;"></a></h1>
-	<h2 style="font-size:2em;"><span style="color:#ff6a00">wait</span> <span style="color:#00adef">no more.</span></h2>
-	<a class="downarrow" href="#about"><span></span></a>
-</section>
-<section id="about">
-	<div>
-		<div class="progbar1"><img src="orangeperson.png"></div>
-		<div class="progbar2"><img src="blueperson.png"></div>
-		<h2 class="sectionheader"><a href="#about">About</a></h2>
-		<br>
-	</div>
-	<p class="left" style="text-indent:3em;">Everyone has been there. Dragging themselves out of bed, rushing to get ready and quickly scarfing down a paltry breakfast, just to wait too long for the bus, or get stuck in traffic. Precious minutes of sleep lost, just to get to school or work on time. Now, this daily struggle can be avoided with the all-new OneStep portal. Enjoy a relaxed morning, and when it's time to be at work, just one step through our OneStep portal, and you'll immediately be anywhere you need to be, sans long commute on bus or car.</p>
-	<div style="text-align:center; position:relative; top:-150px;"><a class="downarrow" href="#howto"><span></span></a></div>
-</section>
-<section id="howto">
-	<div>
-		<div class="progbar1"><img src="orangeperson.png"></div>
-		<div class="progbar2"><img src="blueperson.png"></div>
-		<h2 class="sectionheader"><a href="#howto">How to Use</a></h2>
-		<br>
-	</div>
-	<div class="right">
-		Just follow these simple steps, and get ready for a nice long morning! 
-		<ol style="text-indent:none;">
-			<li style="text-indent:none;">Order the OneStep portal, <a style="color:gray;" href="#form">right here</a> on our website.</li>
-			<li style="text-indent:none;">There are two major parts to our portal. The first, a large magnetized steel warp loop is to be set up at home, in your garage, your kitchen, your living room, where ever you want. Directions are included, as well as found on our website.</li>
-			<li style="text-indent:none;">The second part of our portal, is a set of two chips about the size of your fingertip. Each is to be placed at your destination: your office, school, or anywhere! You can teleport straight to any chip of your choice from home, or recall directly back home from any chip, as easy as that. WARNING: the usage of the portal without this piece properly installed in an open space could lead to loss of body parts, internal and external injuries, loss of consciousness, and/or death.</li>
-			<li style="text-indent:none;">Enjoy your stress free mornings!</li>
-		</ol>
-	</div>
-	<div style="text-align:center; position:relative; top:-150px;"><a class="downarrow" href="#form"><span></span></a></div>
-</section>
-
-
-
-<!--use a google form-->
-
-<style>
-form{
-	display:block;
-	margin-left: auto; margin-right: auto;
-	width:50%;
-	text-align:center;
-	background-color:black;
-	color:white;
-	font-family:Montserrat;
-}
-form h1{
-	font-size: 2.5em;
-	margin: 0.1em;
-}
-form h2{
-	font-size: 1.5em;
-	margin: 0.1em;
-}
-form input, form label, form button{
-	font-size: 1em;
-	padding:0.2em;
-	margin: 0.2em;
-}
-form label:hover{
-	cursor: pointer;
-}
-form input[type=text]{
-	width:20em;
-}
-form input[type=email]{
-	width:25em;
-}
-form input[type=radio]{
-	height: 15px;
-	width: 15px;
-}
-form input[type=radio]:hover{
-	cursor: pointer;
-}
-form button{
-	border: solid 5px white;
-	background-color: black;
-	color:white;
-	transition: background-color 0.5s, width 0.5s, height 0.5s;
-	border-radius: 5px;
-}
-form button:hover{
-	cursor:pointer;
-}
-label{display:block;}
-</style>
-
-<section id="form">
-	<div>
-		<div class="progbar1"><img src="orangeperson.png"></div>
-		<div class="progbar2"><img src="blueperson.png"></div>
-		<h2 class="sectionheader"><a href="#form">Interest Form</a></h2>
-		<br>
-	</div>
-	<form target="hiddenFrame" action="https://docs.google.com/forms/d/14khs8tql8jYJpdWfeLsHECKSxfIf_wqdM7oNHtAfvZw/formResponse" method="POST" id="ss-form" target="_self" onsubmit="" autocomplete="off">
-		<label>
-			<input type="text" name="entry.660440213" value="" placeholder="Name" required aria-required="true">
-		</label>
-		<label>
-			<input type="email" name="entry.846943958" value="" placeholder="email@email.com" title="Must be a valid email address" required aria-required="true">
-		</label>
-		<label>
-			<textarea placeholder="Comment" value="" style="width: 500px; height: 200px;" name="entry.1327479222"></textarea>
-		</label>
-		<div>
-			<button id="submitbtn" name="submit"><span style="display:inline-block;">Submit</span></button>
+	<video autoplay loop id="bgvid" muted>
+		<source src="full.mp4" type="video/mp4">
+	</video>
+	<nav>
+		<div id="nav-slider"></div><!--Based vaguely on 2015f.pennapps.com-->
+		<a href="#home">Home<span></span></a>
+		<a href="#about">About<span></span></a>
+		<a href="#howto">How to Use<span></span></a>
+		<a href="#form">Interest Form<span></span></a>
+	</nav>
+	<section id="home">
+		<!--
+		Video segments:
+		https://www.youtube.com/watch?v=oBD_Yxx33ms
+		https://www.youtube.com/watch?v=m8n2o3Qx504
+		https://www.youtube.com/watch?v=kfmhd_kfaD4
+		https://www.youtube.com/watch?v=ZpHRp-WgQ0w
+		
+		Portal logos:
+		https://s-media-cache-ak0.pinimg.com/originals/0e/79/c5/0e79c590cd66b6140e9505201045b7de.png
+		https://i.imgur.com/XVLga.jpg
+		-->
+		<h1><a href="#home"><img id="logo" src="logo.png" alt="OneStep"></a></h1>
+		<h2 style="font-size:2em;"><span style="color:#ff6a00">wait</span> <span style="color:#00adef">no more.</span></h2>
+		<a class="downarrow" href="#about"><span></span></a>
+	</section>
+	<section id="about" class="headered">
+		<header>
+			<div class="progbar1"><img src="orangeperson.png"></div>
+			<div class="progbar2"><img src="blueperson.png"></div>
+			<h2 class="sectionheader"><a href="#about">About</a></h2>
+		</header>
+		<p class="left" style="text-indent:3em;">Everyone has been there. Dragging themselves out of bed, rushing to get ready and quickly scarfing down a paltry breakfast, just to wait too long for the bus, or get stuck in traffic. Precious minutes of sleep lost, just to get to school or work on time. Now, this daily struggle can be avoided with the all-new OneStep portal. Enjoy a relaxed morning, and when it's time to be at work, just one step through our OneStep portal, and you'll immediately be anywhere you need to be, sans long commute on bus or car.</p>
+		<div style="text-align:center; position:relative; top:-150px;"><a class="downarrow" href="#howto"><span></span></a></div>
+	</section>
+	<section id="howto" class="headered">
+		<header>
+			<div class="progbar1"><img src="orangeperson.png"></div>
+			<div class="progbar2"><img src="blueperson.png"></div>
+			<h2 class="sectionheader"><a href="#howto">How to Use</a></h2>
+		</header>
+		<div class="right">
+			Just follow these simple steps, and get ready for a nice long morning! 
+			<ol style="text-indent:none;">
+				<li style="text-indent:none;">Order the OneStep portal, <a style="color:gray;" href="#form">right here</a> on our website.</li>
+				<li style="text-indent:none;">There are two major parts to our portal. The first, a large magnetized steel warp loop is to be set up at home, in your garage, your kitchen, your living room, where ever you want. Directions are included, as well as found on our website.</li>
+				<li style="text-indent:none;">The second part of our portal, is a set of two chips about the size of your fingertip. Each is to be placed at your destination: your office, school, or anywhere! You can teleport straight to any chip of your choice from home, or recall directly back home from any chip, as easy as that. <span style="color:#999;">WARNING: the usage of the portal without this piece properly installed in an open space could lead to loss of body parts, internal and external injuries, loss of consciousness, and/or death.</span></li>
+				<li style="text-indent:none;">Enjoy your stress free mornings!</li>
+			</ol>
 		</div>
-	</form>
-
-	<!--http://stackoverflow.com/a/30666118/1181387-->
-	<iframe id="hiddenFrame" name="hiddenFrame" style="display: none;"></iframe>
-</section>
-
-<script>
-	var lockColor = false;
-	var hovering = false;
-	function rewidth(){$("#submitbtn").width($("#submitbtn span").width());}
-	$("#submitbtn").mouseenter(function(){hovering = true;if(!lockColor)$(this).css({"background-color":"white","color":"black"});});
-	$("#submitbtn").mouseleave(function(){hovering = false;if(!lockColor)$(this).css({"background-color":"black","color":"white"});});
-	$("#ss-form").on("submit", function () {
-		$("#submitbtn span").text("Sending response...");
-		$("#submitbtn").css({"background-color":"red","color":"white"});
-		rewidth();
-		lockColor=true;
-		$("#hiddenFrame").load(function(){
-			//$("#ss-form").trigger("reset");
-			$("#submitbtn span").html("Sent! Thanks for your interest; we'll be getting back to you soon.");
-			$("#submitbtn").css("background-color","green");
-			rewidth();
-			setTimeout(function(){
-				$("#submitbtn span").text("Submit");
-				$("#submitbtn").css("background-color","black");
-				rewidth();
-				lockColor=false;
-				if(hovering)
-					$("#submitbtn").mouseenter();
-			},5000);
-		});
-    });
-</script>
-
-
-
-
-
-<footer style="color:#444;font-family:Montserrat;text-align:center;margin:1em 5em 5em 5em;">
-	Copyright &copy;2015 <a style="color:#444;" href="http://clive.io">Clive Chan</a> & Thesi Mandl
-	<br>
-	Made with &lt;3 for Public Speaking 1 @ LHS
-</footer>
+		<div style="text-align:center; position:relative; top:-150px;"><a class="downarrow" href="#form"><span></span></a></div>
+	</section>
+	<section id="form" class="headered">
+		<header>
+			<div class="progbar1"><img src="orangeperson.png"></div>
+			<div class="progbar2"><img src="blueperson.png"></div>
+			<h2 class="sectionheader"><a href="#form">Interest Form</a></h2>
+		</header>
+		<form target="hiddenFrame" action="https://docs.google.com/forms/d/14khs8tql8jYJpdWfeLsHECKSxfIf_wqdM7oNHtAfvZw/formResponse" method="POST" id="ss-form" target="_self" onsubmit="" autocomplete="off">
+			<input type="text" name="entry.660440213" value="" placeholder="Name" required aria-required="true">
+			<input type="email" name="entry.846943958" value="" placeholder="email@email.com" title="Must be a valid email address" required aria-required="true">
+			<textarea placeholder="Comment" value="" style="width: 500px; height: 200px;" name="entry.1327479222"></textarea>
+			<button id="submitbtn" name="submit"><span style="display:inline-block;">Submit</span></button>
+		</form>
+		<!--http://stackoverflow.com/a/30666118/1181387-->
+		<iframe id="hiddenFrame" name="hiddenFrame" style="display: none;"></iframe>
+	</section>
+	<footer>
+		<div>Copyright &copy;2015 <a style="color:#444;" href="http://clive.io">Clive Chan</a> & Thesi Mandl</div>
+		<div>Made with &lt;3 for DiMartino/Weisberg Public Speaking 1 @ LHS</div>
+	</footer>
 </body>
 </html>
