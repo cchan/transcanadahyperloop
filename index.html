@@ -74,15 +74,20 @@ body{
 .downarrow span{
 	position:relative;top:12px;
 	text-decoration: none;
-	font-size: 1.5em;color:#ff6a00;
-	transition: color 0.5s;
+	font-size: 1.5em;
+	transition: border-color 0.5s;
 	font-family:Arial;
+	display: inline-block;
+	border-right: solid 2px #ff6a00;
+	border-bottom: solid 2px#ff6a00;
+	width:20px;height:20px;
+	transform: rotate(45deg);
 }
 .downarrow:hover{
 	border: solid 1px #00adef;
 	cursor:pointer;}
 .downarrow:hover span{
-	color:#00adef;
+	border-color:#00adef;
 }
 h2{font-family:'Alegreya Sans SC', cursive;transition: color 0.5s;color:#ff6a00;}
 section{
@@ -96,11 +101,11 @@ h2 a{color:inherit;text-decoration:none;}
 $(function(){
 	//https://stackoverflow.com/questions/19700020/change-progress-bar-value-based-on-scrolling
 	$(window).scroll(function () {
-		var s = $(window).scrollTop() - 150;
+		var s = $(window).scrollTop() - $("#about").offset().top + $("#about").width()*0.3 - $("#about .progbar1 img").width()/2 + 1;
 		//s += s*s*s/6000;
-		var s2 = $(window).scrollTop() - 800;
+		var s2 = $(window).scrollTop() - $("#howto").offset().top + $("#howto").width()*0.3 - $("#howto .progbar1 img").width()/2 + 1;
 		//s2 += s2*s2*s2/6000;
-		var s3 = $(window).scrollTop() - 1680;
+		var s3 = $(window).scrollTop() - $("#form").offset().top + $("#form").width()*0.3 - $("#form .progbar1 img").width()/2 + 1;
 		//s3 += s3*s3*s3/6000;
 	   $("#about .progbar1 img").css('margin-left', s);
 	   $("#about .progbar2 img").css('margin-left', s-$(window).width()/3.33);
@@ -154,7 +159,7 @@ $(function(){
 	-->
 	<h1><a href="#home"><img id="logo" src="onestep.png" alt="OneStep" style="height:30%;"></a></h1>
 	<h2 style="font-size:2em;"><span style="color:#ff6a00">wait</span> <span style="color:#00adef">no more.</span></h2>
-	<a class="downarrow" href="#about"><span>&nbsp;v&nbsp;</span></a>
+	<a class="downarrow" href="#about"><span></span></a>
 </section>
 <section id="about">
 	<div>
@@ -164,7 +169,7 @@ $(function(){
 		<br>
 	</div>
 	<p class="left" style="text-indent:3em;">Everyone has been there. Dragging themselves out of bed, rushing to get ready and quickly scarfing down a paltry breakfast, just to wait too long for the bus, or get stuck in traffic. Precious minutes of sleep lost, just to get to school or work on time. Now, this daily struggle can be avoided with the all-new OneStep portal. Enjoy a relaxed morning, and when it's time to be at work, just one step through our OneStep portal, and you'll immediately be anywhere you need to be, sans long commute on bus or car.</p>
-	<div style="text-align:center; position:relative; top:-150px;"><a class="downarrow" href="#howto"><span>&nbsp;v&nbsp;</span></a></div>
+	<div style="text-align:center; position:relative; top:-150px;"><a class="downarrow" href="#howto"><span></span></a></div>
 </section>
 <section id="howto">
 	<div>
@@ -182,7 +187,7 @@ $(function(){
 			<li style="text-indent:none;">Enjoy your stress free mornings!</li>
 		</ol>
 	</div>
-	<div style="text-align:center; position:relative; top:-150px;"><a class="downarrow" href="#form"><span>&nbsp;v&nbsp;</span></a></div>
+	<div style="text-align:center; position:relative; top:-150px;"><a class="downarrow" href="#form"><span></span></a></div>
 </section>
 
 
