@@ -86,9 +86,10 @@ body{
 	width:30%;
 	display:inline-block;
 	z-index: -70;
+	margin-top:-1em;
 }
 .progbar1 img, .progbar2 img{
-	height: 3em;
+	height: 4em;
 }
 .progbar1{
 	position:absolute;left:0;

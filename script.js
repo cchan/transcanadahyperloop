@@ -2,7 +2,7 @@ $(function(){
 	//https://stackoverflow.com/questions/19700020/change-progress-bar-value-based-on-scrolling
 	$(window).scroll(function () {
 		$(".headered").each(function(){
-			var s = $(window).scrollTop() - $(this).offset().top + $(this).width()*0.3 - $(this).find(".progbar1 img").width()/2 + 1;
+			var s = $(window).scrollTop() - $(this).offset().top + $(this).width()*0.3 - $(this).find(".progbar1 img").width()/2 + 2;
 			//s += s*s*s/6000;
 			
 			$(this).find(".progbar1 img").css('margin-left', s);
