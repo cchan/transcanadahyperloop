@@ -6,7 +6,10 @@ nav{
 	height:50%;
 	font-family: Montserrat;
 	width: 10em;
+	opacity:0.5;
+	transition: opacity 0.5s;
 }
+nav:hover{opacity:1;}
 nav a{
 	display:block;
 	text-align:right;
@@ -15,6 +18,16 @@ nav a{
 	position:absolute;
 	top:0;
 	right:0;
+	transition: color 0.5s;
+}
+nav:hover a.active{
+	/*color: #ff6a00;*/
+}
+nav a:hover{
+	color: #00adef;
+}
+nav a.active:hover{
+	color: #00adef;
 }
 nav #nav-slider{
 	height:0;
@@ -37,24 +50,15 @@ nav a span{
 nav a.active span{
 	background-color:white;
 }
-.left, .right{
+.text{
 	width: 50%;
 	font-family:Montserrat;
 	margin-left:auto;
 	margin-right:auto;
-	font-weight: normal;
 	line-height: 2em;
-	margin-top: 3em;
-	margin-bottom: 10em;
+	margin-top:3em;
 }
-section{min-height: 80%;}
-div.right ol li{text-indent: none !important;}
-.left{
-	margin-left:auto;
-}
-.right{
-	margin-right:auto;
-}
+section{margin-bottom: 7em;}
 #home{
 	text-align:center;
 	height: 100%;
@@ -100,7 +104,7 @@ body{
 	border-left: solid 3px #00adef;
 }
 .downarrow{
-	display:inline-block;
+	display:block;
 	border: solid 2px #ff6a00;
 	border-radius: 100px;
 	transition: border-color 0.5s;
@@ -109,6 +113,7 @@ body{
 	width:55px;
 	height:55px;
 	text-decoration: none;
+	margin-left:auto;margin-right:auto;
 }
 .downarrow span{
 	position:relative;top:12px;
