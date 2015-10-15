@@ -21,6 +21,12 @@ $(function(){
 		$("nav a").each(function(){
 			$(this).css("top",$($(this).attr("href")).offset().top * navHeight / totalHeight);
 		});
+		$("section").each(function(){
+			if($(window).scrollTop() > $(this).offset().top - 5 * totalHeight / navHeight)
+				$("nav a[href=#"+this.id+"]").addClass("active");
+			else
+				$("nav a[href=#"+this.id+"]").removeClass("active");
+		});
 	}
 	updateNav();
 

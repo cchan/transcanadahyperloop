@@ -2,7 +2,7 @@ nav{
 	position: fixed;
 	right: 0;
 	margin-right: 5%;
-	top: 10%;
+	top: 7em;
 	height:50%;
 	font-family: Montserrat;
 	width: 10em;
@@ -21,18 +21,18 @@ nav #nav-slider{
 	width:2px;
 	background-color: white;
 	position: absolute;
-	right:2.5px;top:12.5px;/*conveniently, the 2px width and two 1px borders cancels out*/
+	right:3px;top:13px;/*conveniently, the 2px width and two 1px borders cancels out. I think? Actually never mind it's cool but false*/
 	z-index:-50;
 }
 nav a span{
 	content:"";
 	display:inline-block;
-	height:5px;width:5px;
-	border-radius:5px;
+	height:6px;width:6px;
+	border-radius:6px;
 	border:solid 1px #fff;
-	background-color:black;
+	background-color:transparent;
 	transition:background-color 0.5s;
-	margin-left: 5px;
+	margin-left: 6px;
 }
 nav a.active span{
 	background-color:white;
@@ -85,6 +85,7 @@ body{
 	overflow:hidden;
 	width:30%;
 	display:inline-block;
+	z-index: -70;
 }
 .progbar1 img, .progbar2 img{
 	height: 3em;
@@ -99,7 +100,7 @@ body{
 }
 .downarrow{
 	display:inline-block;
-	border: solid 1px #ff6a00;
+	border: solid 2px #ff6a00;
 	border-radius: 100px;
 	transition: border-color 0.5s;
 	margin-top:20px;
@@ -115,13 +116,13 @@ body{
 	transition: border-color 0.5s;
 	font-family:Arial;
 	display: inline-block;
-	border-right: solid 2px #ff6a00;
-	border-bottom: solid 2px#ff6a00;
+	border-right: solid 3px #ff6a00;
+	border-bottom: solid 3px #ff6a00;
 	width:20px;height:20px;
 	transform: rotate(45deg);
 }
 .downarrow:hover{
-	border: solid 1px #00adef;
+	border: solid 2px #00adef;
 	cursor:pointer;}
 .downarrow:hover span{
 	border-color:#00adef;
