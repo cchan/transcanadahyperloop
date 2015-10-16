@@ -28,22 +28,19 @@ $(function(){
 				$("nav a[href=#"+this.id+"]").removeClass("active");
 		});
 	}
-	updateNav();
 
 	//Smooth scrolling.
 	//Adapted from //http://www.paulund.co.uk/smooth-scroll-to-internal-links-with-jquery
-	$(document).ready(function(){
-		$('a[href^="#"]').on('click',function (e) {
-			e.preventDefault();
+	$('a[href^="#"]').on('click',function (e) {
+		e.preventDefault();
 
-			var target = this.hash;
-			var $target = $(target);
+		var target = this.hash;
+		var $target = $(target);
 
-			$('html, body').stop().animate({
-				'scrollTop': $target.offset().top
-			}, 900, 'swing', function () {
-				window.location.hash = target;
-			});
+		$('html, body').stop().animate({
+			'scrollTop': $target.offset().top
+		}, 900, 'swing', function () {
+			window.location.hash = target;
 		});
 	});
 	
@@ -60,7 +57,7 @@ $(function(){
 		lockColor=true;
 		$("#hiddenFrame").load(function(){
 			//$("#ss-form").trigger("reset");
-			$("#submitbtn span").html("Sent! Thanks for your interest; we'll be getting back to you soon.");
+			$("#submitbtn span").html("Thanks! We'll get back to you soon.");
 			$("#submitbtn").css("background-color","green");
 			rewidth();
 			setTimeout(function(){
@@ -73,4 +70,7 @@ $(function(){
 			},5000);
 		});
     });
+	
+	updateNav();
+	setInterval(updateNav,1000);
 });
