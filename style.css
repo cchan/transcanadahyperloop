@@ -185,12 +185,14 @@ footer{color:#aaa;font-family:Montserrat;text-align:center;margin:5em 5em 5em 5e
 	transition: background-color 0.5s, color 0.5s, border 0.5s, width 0.5s, height 0.5s;
 	border-radius: 5px;
 	margin-top:0.5em;
+	padding: 0.5em;
 }
 .hoverbtn{
 	padding: 0.5em;
 	font-size: 1.5em;
 	margin: 0.5em;
 	text-decoration: inherit;
+	white-space: nowrap;
 }
 .hoverbtn:hover, #ss-form button.hovered{
 	border: solid 3px #66f;
@@ -220,4 +222,31 @@ footer{color:#aaa;font-family:Montserrat;text-align:center;margin:5em 5em 5em 5e
 	max-height: 8em;
 	max-width: 8em;
 	vertical-align: middle;
+}
+
+@media(max-aspect-ratio:1/1){
+	.sponsorlogo{
+		font-size: 0.8em;
+	}
+	#home header .line{
+		display: none;
+	}
+	nav{
+		display: none;
+	}
+	#home h2, .text, #ss-form{
+		width: 90%;
+	}
+	.text, #ss-form{
+		font-size: 1.8em;
+	}
+	#ss-form input, #ss-form textarea{
+		width: 90%;
+	}
+	.progbar1, .progbar2{
+		display: none;
+	}
+	#ss-form button{
+		font-size: 1.5em;
+	}
 }
