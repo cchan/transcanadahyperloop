@@ -1,3 +1,8 @@
+---
+---
+
+# github.com/skillflowhq/whoosh
+
 # WHOOSH
 # Super-easy and super-fast slide-in animations on scroll.
 # Built by Clive Chan for SkillFlow, 2016
