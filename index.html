@@ -13,6 +13,7 @@
 	<link href='style.css' rel='stylesheet'>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	<script src="script.js"></script>
+	<script src="whoosh.js"></script>
 </head>
 <body>
 	<nav>
@@ -23,10 +24,10 @@
 		<a href="#register">Register<span></span></a>
 	</nav>
 	<section id="home">
-		<header><span class="line"></span> <span class="block"></span> <img src="leaf.png" id="leaf"> <span class="block"></span> <span class="line"></span></header>
-		<h1><a href="#home"><b>Trans-Canada Hyperloop</b><br>Route Design Competition</a></h1>
-		<h2><span style="display:inline-block">Design a Hyperloop route to connect</span> <span style="display:inline-block"><span class="red">Canada</span> from <span class="lightblue">sea</span> to <span class="darkblue">sea</span>.</span></h2>
-		<a href="#register" class="hoverbtn">Registration is open!</a>
+		<header><span class="line" data-whoosh-from="left" data-delay="500"></span> <span class="block" data-whoosh-from="left"></span> <img src="leaf.png" id="leaf" data-whoosh-from="top"> <span class="block" data-whoosh-from="right"></span> <span class="line" data-whoosh-from="right" data-delay="500"></span></header>
+		<h1><a href="#home"><b data-whoosh-from="left">Trans-Canada Hyperloop</b><br><span data-whoosh-from="right">Route Design Competition</span></a></h1>
+		<h2><span style="display:inline-block" data-whoosh-from="left" data-delay="1000">Design a Hyperloop route to connect</span> <span style="display:inline-block" data-whoosh-from="right" data-delay="1000"><span class="red">Canada</span> from <span class="lightblue">sea</span> to <span class="darkblue">sea</span>.</span></h2>
+		<a href="#register" class="hoverbtn" data-whoosh-from="bottom" data-delay="1500">Registration is open!</a>
 	</section>
 	<section id="about" class="headered">
 		<header>

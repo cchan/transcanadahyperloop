@@ -95,8 +95,7 @@ section{margin-bottom: 7em;}
 	height: 2px;
 	background-color: black;
 	width: 10em;
-	position: relative;
-	top: -0.9em;
+	margin-bottom: 0.9em;
 }
 #home header .block{
 	display:inline-block;
@@ -106,8 +105,7 @@ section{margin-bottom: 7em;}
 }
 #home header #leaf{
 	height: 1.6em;
-	position:relative;
-	top:-0.2em;
+	padding-bottom:0.2em;
 }
 video#bgvid { 
 	opacity:0.8;
