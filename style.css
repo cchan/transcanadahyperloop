@@ -8,35 +8,33 @@ nav{
 	width: 10em;
 	opacity:0.5;
 	transition: opacity 0.5s;
+	font-weight:bold;
 }
 nav:hover{opacity:1;}
 nav a{
 	display:block;
 	text-align:right;
-	color:white;
+	color:black;
 	text-decoration:none;
 	position:absolute;
 	top:0;
 	right:0;
 	transition: color 0.5s;
-	padding:2em;
-	margin:-2em;
+	padding:1em;
+	margin:-1em;
 }
 nav:hover a.active{
-	/*color: #ff6a00;*/
+	color: #00c;
 }
-nav a:hover{
-	color: #00adef;
-}
-nav a.active:hover{
-	color: #00adef;
+nav a:hover, nav a.active:hover{
+	color: #66f;
 }
 nav #nav-slider{
 	height:0;
 	width:2px;
-	background-color: white;
+	background-color: black;
 	position: absolute;
-	right:3px;top:13px;/*conveniently, the 2px width and two 1px borders cancels out. I think? Actually never mind it's cool but false*/
+	right:3px; top:13px;
 	z-index:-50;
 }
 nav a span{
@@ -44,32 +42,67 @@ nav a span{
 	display:inline-block;
 	height:6px;width:6px;
 	border-radius:6px;
-	border:solid 1px #fff;
+	border:solid 1px black;
 	background-color:transparent;
 	transition:background-color 0.5s;
 	margin-left: 6px;
 }
 nav a.active span{
-	background-color:white;
+	background-color:black;
 }
 .text{
 	width: 50%;
-	font-family:Montserrat;
 	margin-left:auto;
 	margin-right:auto;
 	line-height: 2em;
 	margin-top:3em;
 }
 section{margin-bottom: 7em;}
+.red{
+	color:red;
+}
+.lightblue{
+	color:#66f;
+}
+.darkblue{
+	color:#00c;
+}
 #home{
 	text-align:center;
 	height: 100%;
 	margin:0;
 	padding-bottom:10em;
 }
-#logo{
-	margin-top: 0.5em;
-	width: 20em;
+#home h1, h1 a{
+	color:inherit;
+	text-decoration:inherit;
+}
+#home h2{
+	font-size: 3em;
+	margin: 1em auto;
+	width: 60%;
+}
+#home header{
+	user-select: none;
+}
+#home header .line{
+	display: inline-block;
+	height: 2px;
+	background-color: black;
+	width: 10em;
+	position: relative;
+	top: -0.9em;
+}
+#home header .block{
+	display:inline-block;
+	height:2em;
+	width:1em;
+	background-color:black;
+}
+#home header #leaf{
+	height: 1.6em;
+	position:relative;
+	top:-0.2em;
 }
 video#bgvid { 
 	opacity:0.8;
@@ -81,10 +114,11 @@ video#bgvid {
     background-size: cover;
 }
 body{
-	color: white;
+	color: black;
+	font-family:Montserrat;
 	padding:0;
 	margin:0;
-	background-color: black;
+	background-color: #ddd;
 	overflow-x: hidden;
 }
 .progbar1, .progbar2{
@@ -99,57 +133,27 @@ body{
 }
 .progbar1{
 	position:absolute;left:0;
-	border-right: solid 3px #ff6a00;
+	border-right: solid 3px #66f;
 }
 .progbar2{
 	position:absolute;right:0;
-	border-left: solid 3px #00adef;
+	border-left: solid 3px #00c;
 }
-.downarrow{
-	display:block;
-	border: solid 2px #ff6a00;
-	border-radius: 100px;
-	transition: border-color 0.5s;
-	margin-top:20px;
-	text-align:center;
-	width:55px;
-	height:55px;
-	text-decoration: none;
-	margin-left:auto;margin-right:auto;
-}
-.downarrow span{
-	position:relative;top:12px;
-	text-decoration: none;
-	font-size: 1.5em;
-	transition: border-color 0.5s;
-	font-family:Arial;
-	display: inline-block;
-	border-right: solid 3px #ff6a00;
-	border-bottom: solid 3px #ff6a00;
-	width:20px;height:20px;
-	transform: rotate(45deg);
-}
-.downarrow:hover{
-	border: solid 2px #00adef;
-	cursor:pointer;}
-.downarrow:hover span{
-	border-color:#00adef;
-}
-h2{font-family:'Alegreya Sans SC', cursive;transition: color 0.5s;color:#ff6a00;}
+h2{font-family:'Alegreya Sans SC', cursive;transition: color 0.5s;color:black;}
 section{
 	padding-top:5em;
 }
 h2 a{color:inherit;text-decoration:none;}
 .sectionheader{margin:0px;text-align:center;font-size:4em;line-height:0.5em;}
-footer{color:#444;font-family:Montserrat;text-align:center;margin:5em 5em 5em 5em;}
+footer{color:#aaa;font-family:Montserrat;text-align:center;margin:5em 5em 5em 5em;}
 
 /*Clubfair-style form*/
-#ss-form{margin-top:3em;
+#ss-form{
+	margin-top:3em;
 	display:block;
 	margin-left: auto; margin-right: auto;
 	width:50%;
 	text-align:center;
-	background-color:black;
 	color:white;
 	font-family:Montserrat;
 }
@@ -166,32 +170,28 @@ footer{color:#444;font-family:Montserrat;text-align:center;margin:5em 5em 5em 5e
 	padding:0.2em;
 	margin: 0.2em;
 }
-#ss-form label:hover{
+#ss-form label:hover, #ss-form button:hover{
 	cursor: pointer;
 }
-#ss-form input[type=text]{
-	width:20em;
-}
-#ss-form input[type=email]{
-	width:25em;
-}
-#ss-form input[type=radio]{
-	height: 15px;
-	width: 15px;
-}
-#ss-form input[type=radio]:hover{
-	cursor: pointer;
-}
-#ss-form button{
+#ss-form button, .hoverbtn{
 	border: solid 3px white;
-	background-color: black;
-	color:white;
+	background-color: white;
+	color:black;
 	transition: background-color 0.5s, width 0.5s, height 0.5s;
 	border-radius: 5px;
 	margin-top:0.5em;
 }
-#ss-form button:hover{
-	cursor:pointer;
+.hoverbtn{
+	padding: 0.5em;
+	font-size: 1.5em;
+	margin: 0.5em;
+	text-decoration: inherit;
+}
+.hoverbtn:hover{
+	border: solid 3px white;
+	background-color: black;
+	color:white;
 }
 #ss-form input,#ss-form textarea,#ss-form button{display:block;margin-left:auto;margin-right:auto;}
-#ss-form input,#ss-form textarea{color:black;}
+#ss-form input,#ss-form textarea{color:black;width:25em;}
+#ss-form textarea{height:5em;}

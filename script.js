@@ -8,8 +8,8 @@ $(function(){
 			$(this).find(".progbar1 img").css('margin-left', s);
 			$(this).find(".progbar2 img").css('margin-left', s-$(window).width()/3.33);
 			
-			if(s > 365)$(this).find(".sectionheader").css("color","#00adef");
-			else $(this).find(".sectionheader").css("color","#ff6a00");
+			if(s > 365)$(this).find(".sectionheader").addClass("darkblue").removeClass("lightblue");
+			else $(this).find(".sectionheader").addClass("lightblue").removeClass("darkblue");
 		});
 		updateNav();
 	});
@@ -23,9 +23,9 @@ $(function(){
 		});
 		$("section").each(function(){
 			if($(window).scrollTop() > $(this).offset().top - 5 * totalHeight / navHeight)
-				$("nav a[href=#"+this.id+"]").addClass("active");
+				$("nav a[href=\"#"+this.id+"\"]").addClass("active");
 			else
-				$("nav a[href=#"+this.id+"]").removeClass("active");
+				$("nav a[href=\"#"+this.id+"\"]").removeClass("active");
 		});
 	}
 
@@ -48,29 +48,32 @@ $(function(){
 	var lockColor = false;
 	var hovering = false;
 	function rewidth(){$("#submitbtn").width($("#submitbtn span").width());}
-	$("#submitbtn").mouseenter(function(){hovering = true;if(!lockColor)$(this).css({"background-color":"white","color":"black"});});
-	$("#submitbtn").mouseleave(function(){hovering = false;if(!lockColor)$(this).css({"background-color":"black","color":"white"});});
+	$("#submitbtn").mouseenter(function(){hovering = true;if(!lockColor)$(this).css({"background-color":"black","color":"white"});});
+	$("#submitbtn").mouseleave(function(){hovering = false;if(!lockColor)$(this).css({"background-color":"white","color":"black"});});
 	$("#ss-form").on("submit", function () {
 		$("#submitbtn span").text("Sending response...");
 		$("#submitbtn").css({"background-color":"red","color":"white"});
 		rewidth();
 		lockColor=true;
-		$("#hiddenFrame").load(function(){
-			//$("#ss-form").trigger("reset");
-			$("#submitbtn span").html("Thanks! We'll get back to you soon.");
+		$("#hiddenFrame").on("load", function(){
+			$("#submitbtn span").html("Thanks! We'll get back to you soon. Click to submit another response.");
 			$("#submitbtn").css("background-color","green");
-			rewidth();
-			setTimeout(function(){
+			$("#submitbtn").on("click.resubmit", function(e){
 				$("#submitbtn span").text("Submit");
 				$("#submitbtn").css("background-color","black");
 				rewidth();
 				lockColor=false;
-				if(hovering)
-					$("#submitbtn").mouseenter();
-			},5000);
+				if(hovering) $("#submitbtn").mouseenter();
+				$("#ss-form .resettable").val("");
+				$("#ss-form input").get(0).focus();
+				e.preventDefault();
+				$("#submitbtn").off("click.resubmit");
+			});
+			rewidth();
 		});
     });
 	
 	updateNav();
 	setInterval(updateNav,1000);
+	$(window).scroll();
 });

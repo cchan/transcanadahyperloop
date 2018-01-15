@@ -5,87 +5,80 @@
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+	<meta name="author" content="Clive Chan (cc@clive.io)">
 	
-	<title>OneStep</title>
-	
-	<link href="normalize.css" rel="stylesheet">
+	<title>Trans-Canada Hyperloop Route Design Competition</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" integrity="sha256-HxaKz5E/eBbvhGMNwhWRPrAR9i/lG1JeT4mD6hCQ7s4=" crossorigin="anonymous" />
 	<link href='https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Montserrat' rel='stylesheet' type='text/css'>
 	<link href='style.css' rel='stylesheet'>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	<script src="script.js"></script>
 </head>
 <body>
-	<video autoplay loop id="bgvid" muted>
-		<source src="full.mp4" type="video/mp4">
-	</video>
 	<nav>
-		<div id="nav-slider"></div><!--Based vaguely on 2015f.pennapps.com-->
+		<div id="nav-slider"></div>
 		<a href="#home">Home<span></span></a>
 		<a href="#about">About<span></span></a>
-		<a href="#howto">How to Use<span></span></a>
-		<a href="#form">Interest Form<span></span></a>
+		<a href="#sponsors">Sponsors<span></span></a>
+		<a href="#register">Register<span></span></a>
 	</nav>
 	<section id="home">
-		<!--
-		Video segments:
-		https://www.youtube.com/watch?v=oBD_Yxx33ms
-		https://www.youtube.com/watch?v=m8n2o3Qx504
-		https://www.youtube.com/watch?v=kfmhd_kfaD4
-		https://www.youtube.com/watch?v=ZpHRp-WgQ0w
-		
-		Portal logos:
-		https://s-media-cache-ak0.pinimg.com/originals/0e/79/c5/0e79c590cd66b6140e9505201045b7de.png
-		https://i.imgur.com/XVLga.jpg
-		-->
-		<h1><a href="#home"><img id="logo" src="logo.png" alt="OneStep"></a></h1>
-		<h2 style="font-size:2em;margin:0;"><span style="color:#ff6a00">in</span>&nbsp;&nbsp;<span style="color:#00adef">no&nbsp;&nbsp;time.</span></h2>
-		<a class="downarrow" href="#about"><span></span></a>
+		<header><span class="line"></span> <span class="block"></span> <img src="leaf.png" id="leaf"> <span class="block"></span> <span class="line"></span></header>
+		<h1><a href="#home">Trans-Canada Hyperloop</a></h1>
+		<h2>Design a Hyperloop route to connect <span class="red">Canada</span> from <span class="lightblue">sea</span> to <span class="darkblue">sea</span>.</h2>
+		<a href="#register" class="hoverbtn">Registration is open!</a>
 	</section>
 	<section id="about" class="headered">
 		<header>
-			<div class="progbar1"><img src="orangeperson.png"></div>
-			<div class="progbar2"><img src="blueperson.png"></div>
+			<div class="progbar1"><img src="lightpod.png"></div>
+			<div class="progbar2"><img src="darkpod.png"></div>
 			<h2 class="sectionheader"><a href="#about">About</a></h2>
 		</header>
-		<p class="text" style="text-indent:3em;">Everyone has been there. Dragging themselves out of bed, rushing to get ready and quickly scarfing down a paltry breakfast, just to wait too long for the bus, or get stuck in traffic. Precious minutes of sleep lost to get to school or work on time. Now, this daily struggle can be avoided with the all-new OneStep portal. Enjoy a relaxed morning, and when it's time to be at work, just one step through our OneStep portal, and you'll immediately be anywhere you need to be, sans long commute on bus or car. Just follow these simple steps, and get ready for a nice long morning!
-			Wake up in Hawaii, go to work in Tokyo, take lunch in Paris, and come right back home to Boston. The possibilities are limitless.</p>
-		<a class="downarrow" href="#howto"><span></span></a>
+		<p class="text" style="text-indent:3em;">
+			Trans-Canada Hyperloop is a Hyperloop route design competition for the Ottawa Valley. The goal is to use the Hyperloop concept to educate teams about infrastructure planning, effective communication, and the ways in which innovation can change lives everywhere.
+		</p>
+		<p class="text" style="text-indent:3em;">
+			This is an educational challenge that is open to all citizens. The challenge guidelines will be posted on Jan 15th.
+		</p>
+		<p class="text" style="text-indent:3em;">
+			The first prize team will be awarded $1000, and other great prizes will be available for the second and third place teams. Additionally, finalists will be invited to present at the Options Trades Event to be held at the Pembroke Memorial Centre in May 2018.
+		</p>
 	</section>
-	<section id="howto" class="headered">
+	<section id="sponsors" class="headered">
 		<header>
-			<div class="progbar1"><img src="orangeperson.png"></div>
-			<div class="progbar2"><img src="blueperson.png"></div>
-			<h2 class="sectionheader"><a href="#howto">How to Use</a></h2>
+			<div class="progbar1"><img src="lightpod.png"></div>
+			<div class="progbar2"><img src="darkpod.png"></div>
+			<h2 class="sectionheader"><a href="#howto">Sponsors</a></h2>
 		</header>
 		<div class="text">
-			<p>Just follow these simple steps, and get ready for a nice long morning!</p>
-			<ol style="text-indent:none;">
-				<li style="text-indent:none;">Order the OneStep portal, <a style="color:gray;" href="#form">right here</a> on our website.</li>
-				<li style="text-indent:none;">There are two major parts to our portal. The first, a large magnetized steel warp loop is to be set up at home, in your garage, your kitchen, your living room, where ever you want. Directions are included, as well as found on our website.</li>
-				<li style="text-indent:none;">The second part of our portal, is a set of two chips about the size of your fingertip. Each is to be placed at your destination: your office, school, or anywhere! You can teleport straight to any chip of your choice from home, or recall directly back home from any chip, as easy as that. <span style="color:#999;">WARNING: the usage of the portal without this piece properly installed in an open space could lead to loss of body parts, internal and external injuries, loss of consciousness, and/or death.</span></li>
-				<li style="text-indent:none;">Enjoy your stress free mornings!</li>
-			</ol>
+			<p>Thanks to all of our sponsors and partners for making this competition possible.</p>
+			<img src="waterloop.png" alt="Waterloop">
+			<img src="oacett.png" alt="Ontario Association of Certified Engineering Technicians and Technologists (OACETT)">
+			<img src="langcore.png" alt="Langcore Construction Corp.">
+			<img src="transpod.png" alt="TransPod">
 		</div>
-		<a class="downarrow" href="#form"><span></span></a>
 	</section>
-	<section id="form" class="headered">
+	<section id="register" class="headered">
 		<header>
-			<div class="progbar1"><img src="orangeperson.png"></div>
-			<div class="progbar2"><img src="blueperson.png"></div>
-			<h2 class="sectionheader"><a href="#form">Interest Form</a></h2>
+			<div class="progbar1"><img src="lightpod.png"></div>
+			<div class="progbar2"><img src="darkpod.png"></div>
+			<h2 class="sectionheader"><a href="#form">Register</a></h2>
 		</header>
-		<form target="hiddenFrame" action="https://docs.google.com/forms/d/14khs8tql8jYJpdWfeLsHECKSxfIf_wqdM7oNHtAfvZw/formResponse" method="POST" id="ss-form" target="_self" onsubmit="" autocomplete="off">
-			<input type="text" name="entry.660440213" value="" placeholder="Name" required aria-required="true">
-			<input type="email" name="entry.846943958" value="" placeholder="email@email.com" title="Must be a valid email address" required aria-required="true">
-			<textarea placeholder="Comment" value="" style="width: 500px; height: 200px;" name="entry.1327479222"></textarea>
+		<form target="hiddenFrame" action="https://docs.google.com/forms/d/e/1FAIpQLSc_mXp33PTC_KdkdXmQ-t8-OxrYf14TcvwSefg8sahiuiS1_Q/formResponse" method="POST" id="ss-form">
+			<input type="text" class="resettable" name="entry.916323122" value="" placeholder="Full Name" required aria-required="true">
+			<input type="email" class="resettable" name="entry.79140437" value="" placeholder="Email Address" required aria-required="true">
+			<input type="text" class="resettable" name="entry.628080549" value="" placeholder="Province/State" required aria-required="true">
+			<input type="text" class="resettable" name="entry.2019776029" value="" placeholder="Country" required aria-required="true">
+			<input type="text" class="resettable" name="entry.221779107" value="" placeholder="Zip/Postal code" required aria-required="true">
+			<input type="text" name="entry.1627729204" value="" placeholder="Team Leader Name" required aria-required="true">
+			<input type="text" name="entry.1472878421" value="" placeholder="Team Name" required aria-required="true">
+			<textarea class="resettable" placeholder="Additional Comments" value="" name="entry.352505816"></textarea>
 			<button id="submitbtn" name="submit"><span style="display:inline-block;">Submit</span></button>
 		</form>
-		<!--http://stackoverflow.com/a/30666118/1181387-->
 		<iframe id="hiddenFrame" name="hiddenFrame" style="display: none;"></iframe>
 	</section>
 	<footer>
-		<div>Copyright &copy;2015 <a style="color:#444;" href="http://clive.io">Clive Chan</a> & Thesi Mandl</div>
-		<div>Made with &lt;3 for DiMartino/Weisberg Public Speaking 1 @ LHS</div>
+		<div>Made with &lt;3 by <a style="color:#aaa;" href="http://clive.io">Clive</a></div>
 	</footer>
 </body>
 </html>
