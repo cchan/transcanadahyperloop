@@ -8,7 +8,7 @@ $(function(){
 			$(this).find(".progbar1 img").css('margin-left', s);
 			$(this).find(".progbar2 img").css('margin-left', s-$(window).width()/3.33);
 			
-			if(s > 365)$(this).find(".sectionheader").addClass("darkblue").removeClass("lightblue");
+			if(s > $(window).width()/3.33-40)$(this).find(".sectionheader").addClass("darkblue").removeClass("lightblue");
 			else $(this).find(".sectionheader").addClass("lightblue").removeClass("darkblue");
 		});
 		updateNav();
