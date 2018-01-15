@@ -48,8 +48,8 @@ $(function(){
 	var lockColor = false;
 	var hovering = false;
 	function rewidth(){$("#submitbtn").width($("#submitbtn span").width());}
-	$("#submitbtn").mouseenter(function(){hovering = true;if(!lockColor)$(this).css({"background-color":"black","color":"white"});});
-	$("#submitbtn").mouseleave(function(){hovering = false;if(!lockColor)$(this).css({"background-color":"white","color":"black"});});
+	$("#submitbtn").mouseenter(function(){hovering = true; if(!lockColor)$(this).addClass("hovered");});
+	$("#submitbtn").mouseleave(function(){hovering = false; if(!lockColor)$(this).removeClass("hovered");});
 	$("#ss-form").on("submit", function () {
 		$("#submitbtn span").text("Sending response...");
 		$("#submitbtn").css({"background-color":"red","color":"white"});
